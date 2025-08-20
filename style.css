@@ -1,0 +1,483 @@
+
+/* Header geral */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #F5E1D1; /* nude suave */
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Container interno do header */
+.header-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+/* Título e subtítulo */
+.header-container h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #4B3B2A; /* tom escuro para contraste */
+}
+
+.header-container p {
+    margin: 5px 0 15px 0;
+    font-size: 1.2em;
+    color: #6B4F3C;
+}
+
+
+/* Lista de links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #4B3B2A;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+h2,h3,h4,p {
+text-align: center; 
+    font-size: 1.6em;
+    color: #111111; /* Cor do texto */
+    margin: 15px; /* Espaçamento ao redor do parágrafo */
+    text-align: center;  /* centraliza o texto */
+    position: relative;
+    z-index: 1 ;
+    
+   
+}
+.nav-links li a:hover {
+    color: #D17C4B; /* tom de destaque ao passar o mouse */
+}
+body {
+    background-image: url('imagens/logo.jpeg'); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    min-height: 100vh;
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+/* Cria uma camada escura semi-transparente sobre o fundo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5e1d1b8; /* O quarto valor (0.4) controla a opacidade. Ajuste de 0.1 a 0.9 para o escurecimento desejado. */
+    z-index: -1; /* Coloca a camada atrás do conteúdo */
+}
+/* Estilos para o contêiner principal dos depoimentos */
+.depoimentos {
+    opacity: 90%; /* Opacidade para suavizar o fundo */
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fundo suave para a seção */
+    text-align: center; /* Centraliza o texto e o Flexbox */
+    display: flex; /* Usa Flexbox para organizar as imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    gap: 25px; /* Espaço entre as imagens */
+    max-width: 1200px; /* Limita a largura do contêiner */
+    margin: 50px auto; /* Centraliza o contêiner na página */
+    border-radius: 15px; /* Bordas arredondadas para a seção */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para a seção */
+    flex-direction: column; /* Organiza os itens (título, parágrafos, imagens) em coluna */
+    align-items: center; /* Centraliza os itens na coluna */
+}
+
+/* Estilos para o título dentro da div depoimentos */
+.depoimentos h2 {
+    color: #4B3B2A;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-align: center;
+    max-width: 800px; /* Limita a largura do título para melhor leitura */
+}
+
+/* Estilos para os parágrafos dentro da div depoimentos */
+.depoimentos p {
+    color: #6B4F3C;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 700px; /* Limita a largura do parágrafo */
+}
+
+/* Adicione um espaçamento maior após os parágrafos antes das imagens */
+.depoimentos p:last-of-type {
+    margin-bottom: 30px;
+}
+
+/* Estilos para cada imagem de depoimento */
+.depoimentos img {
+    /* Mantém os estilos existentes das imagens */
+    width: 100%; /* Ocupa 100% da largura do seu contêiner flex */
+    max-width: 300px; /* Largura máxima para cada imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas para as imagens */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para as imagens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+    /* Como o contêiner .depoimentos agora é flex-direction: column,
+       as imagens também se beneficiarão do 'gap' e 'align-items: center' */
+}
+
+/* Efeito ao passar o mouse sobre as imagens */
+.depoimentos img:hover {
+    transform: translateY(-5px) scale(1.02); /* Leve "salto" e aumento */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Sombra mais intensa */
+}
+
+/* Responsividade: Ajusta o tamanho das imagens e do container em telas menores */
+@media (max-width: 768px) {
+    .depoimentos {
+        padding: 30px 10px; /* Reduz o padding em telas menores */
+        gap: 15px; /* Reduz o espaço entre os elementos */
+    }
+
+    .depoimentos h2 {
+        font-size: 1.8em;
+    }
+
+    .depoimentos p {
+        font-size: 1em;
+    }
+
+    .depoimentos img {
+        max-width: 90%; /* Permite que as imagens ocupem mais espaço em telas pequenas */
+    }
+}
+
+
+
+.imc-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    opacity: 90%;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.imc-section h2 {
+    color: #4B3B2A;
+    margin-bottom: 20px;
+}
+
+.imc-section p, .imc-section ul {
+    font-size: 1.1em;
+    color: #6B4F3C;
+    line-height: 1.6;
+    text-align: left; /* Alinha o texto da descrição e lista à esquerda */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%; /* Para não ocupar 100% da largura, deixando margens */
+}
+
+.imc-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Container do formulário IMC para garantir alinhamento em coluna */
+.imc-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* Estilo para a div de resultado */
+.resultado-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+}
+
+/* Estilos para as classificações de IMC (cores) */
+.abaixo-peso { color: #2196f3; /* Azul */ }
+.peso-normal { color: #4CAF50; /* Verde */ }
+.sobrepeso { color: #FFC107; /* Amarelo */ }
+.obesidade-grau-1 { color: #FF9800; /* Laranja */ }
+.obesidade-grau-2 { color: #FF5722; /* Laranja avermelhado */ }
+.obesidade-grau-3 { color: #F44336; /* Vermelho */ }
+
+/* Mensagem de erro */
+.error-message {
+    color: #dc3545; /* Vermelho */
+    font-weight: normal;
+}
+/* Estilos para o contêiner principal da consulta online */
+.consulta-online {
+    max-width: 800px; /* Largura máxima para centralizar o conteúdo */
+    margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
+    padding: 40px;
+    background-color: #fff; /* Fundo branco para a caixa */
+    opacity: 80%; /* Opacidade para suavizar o fundo */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+    font-family: Arial, sans-serif;
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+
+/* Estilo para o título principal da seção */
+.consulta-online h2,h3,h4,h5,h6{
+    color: #4B3B2A; /* Cor mais escura para o título */
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para os parágrafos de introdução */
+.consulta-online p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza parágrafos curtos */
+    color: #6B4F3C; /* Cor de texto mais suave */
+}
+
+/* Estilo para o subtítulo "Passo a passo" */
+.consulta-online h3 {
+    color: #D17C4B; /* Cor de destaque para o subtítulo */
+    font-size: 1.6em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px solid #D17C4B; /* Linha de destaque abaixo do título */
+    padding-bottom: 10px;
+}
+
+/* Estilo para o texto "Antes da consulta" */
+.consulta-online p strong {
+    color: #4B3B2A; /* Cor mais escura para o texto em negrito */
+    font-size: 1.1em;
+    display: block; /* Garante que o strong ocupe sua própria linha */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o texto em negrito */
+}
+
+/* Estilo para os parágrafos de detalhes */
+.consulta-online p:not(.consulta-online p strong) { /* Seleciona parágrafos que não são o strong */
+    font-size: 1em;
+    text-align: left; /* Alinha o texto detalhado à esquerda */
+    margin-left: 20px; /* Pequeno recuo */
+    margin-right: 20px;
+    color: #5C4033;
+}
+
+
+/* Estilo para a lista de dados fornecidos */
+.consulta-online ul {
+    list-style: none; /* Remove marcadores padrão */
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: left; /* Alinha os itens da lista à esquerda */
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consulta-online ul li {
+    background-color: #f7f3f0; /* Fundo suave para cada item da lista */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex; /* Para alinhar o ícone e texto se quiser adicionar um */
+    align-items: center;
+    color: #4B3B2A;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.consulta-online ul li::before {
+    content: '✓'; /* Ícone de checkmark */
+    color: #D17C4B; /* Cor do checkmark */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    .consulta-online {
+        padding: 25px;
+        margin: 40px 15px; /* Margem menor nas laterais para mobile */
+    }
+
+    .consulta-online h2 {
+        font-size: 1.8em;
+    }
+
+    .consulta-online h3 {
+        font-size: 1.4em;
+    }
+
+    .consulta-online p,
+    .consulta-online ul li {
+        font-size: 0.95em;
+    }
+}
+.sobre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  max-width: 1200px;
+  margin: auto;
+  opacity: 90%;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.text-content h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #219150;
+}
+
+.image-content {
+  flex: 1;
+  text-align: right;
+}
+
+.image-content img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.contato {
+    opacity: 80%; /* Opacidade para suavizar o fundo */
+    background-color: #ffffff;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  padding: 50px;
+  max-width: 800px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c3e50;
+}
+
+.contato-container h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #27ae60;
+}
+
+.contato-container p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contato-info p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+.contato-botoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-button,
+.instagram-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.instagram-button {
+  background-color: #E1306C;
+}
+
+.instagram-button:hover {
+  background-color: #c1275d;
+}
+#dinamicImage {
+  width: 100%; /* ou defina um tamanho fixo */
+  height: auto;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
