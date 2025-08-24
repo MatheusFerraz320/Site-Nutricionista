@@ -1,66 +1,118 @@
 
-/* Header geral */
-header {
-    width: 100%;
-    height: 80px;
-    background-color: #F5E1D1; /* nude suave */
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Container interno do header */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #f5e6d3; /* cor nude */
+    border-bottom: 2px solid #ddd;
+}
+
 .header-container {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    text-align: left;
+    padding: 15px 20px;
+    flex-direction:row;
+    display: flex;
+    justify-content: space-between; /* título à esquerda, links à direita */
+    align-items: left;
+    flex-wrap:wrap;
+    overflow-x:hidden;
 }
 
-/* Título e subtítulo */
-.header-container h1 {
-    margin: 0;
-    font-size: 30px;
-    color: #4B3B2A; /* tom escuro para contraste */
+/* Título */
+header h1 {
+    font-size: 1.5rem;
+    color: #4b2e2e; /* marrom */
 }
 
-.header-container p {
-    margin: 5px 0 15px 0;
-    font-size: 1.2em;
-    color: #6B4F3C;
-}
-
-
-/* Lista de links */
+/* ===== NAVIGATION ===== */
 .nav-links {
     list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+    display: flex;           /* coloca os <li> lado a lado */
+    flex-direction: row; /* garante que fiquem na horizontal */
+    gap: 25px;    /* espaço entre os links */
+    flex-wrap:wrap;
+    margin:0;
+    padding:0;
 }
 
-.nav-links li a {
+.nav-links li {
+    display: inline-block; /* cada link ocupa apenas o necessário */
+}
+
+.nav-links a {
     text-decoration: none;
-    color: #4B3B2A;
+    color: #4b2e2e; /* marrom padrão */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
-h2,h3,h4,p {
-text-align: center; 
-    font-size: 1.6em;
-    color: #111111; /* Cor do texto */
-    margin: 15px; /* Espaçamento ao redor do parágrafo */
-    text-align: center;  /* centraliza o texto */
-    position: relative;
-    z-index: 1 ;
-    
-   
+
+.nav-links a:hover {
+    color: #8b4513; /* marrom mais forte no hover */
 }
-.nav-links li a:hover {
-    color: #D17C4B; /* tom de destaque ao passar o mouse */
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        align-items: left;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+}
+.sobre {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+      width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  max-width: 100%;
+  margin: auto;
+  opacity: 0.9;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  gap: 40px;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #27ae60;
+}
+
+
+@media (max-width: 480px) {
+    .text-content h2 {
+        font-size: 1.5rem;
+    }
 }
 body {
-    background-image: url('imagens/logo.jpeg'); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
+    font-size: 14px;
+    background-image: url('logo.jpeg'); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,7 +136,7 @@ body::before {
 }
 /* Estilos para o contêiner principal dos depoimentos */
 .depoimentos {
-    opacity: 90%; /* Opacidade para suavizar o fundo */
+    opacity: 0.9; /* Opacidade para suavizar o fundo */
     padding: 60px 20px;
     background-color: #ffffff; /* Fundo suave para a seção */
     text-align: center; /* Centraliza o texto e o Flexbox */
@@ -169,7 +221,7 @@ body::before {
     max-width: 600px;
     margin: 50px auto;
     padding: 30px;
-    opacity: 90%;
+    opacity: 0.7;
     background-color: #fefefe;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -241,7 +293,7 @@ body::before {
     margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
     padding: 40px;
     background-color: #fff; /* Fundo branco para a caixa */
-    opacity: 80%; /* Opacidade para suavizar o fundo */
+    opacity: 0.7; /* Opacidade para suavizar o fundo */
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
     font-family: Arial, sans-serif;
@@ -250,7 +302,7 @@ body::before {
 }
 
 /* Estilo para o título principal da seção */
-.consulta-online h2,h3,h4,h5,h6{
+.consulta-online h1,h3,h4,h5,h6{
     color: #4B3B2A; /* Cor mais escura para o título */
     font-size: 2.2em;
     margin-bottom: 20px;
@@ -296,24 +348,24 @@ body::before {
 }
 
 
-/* Estilo para a lista de dados fornecidos */
+
 .consulta-online ul {
-    list-style: none; /* Remove marcadores padrão */
+    list-style: none; 
     padding-left: 0;
     margin-top: 20px;
     margin-bottom: 30px;
-    text-align: left; /* Alinha os itens da lista à esquerda */
+    text-align: left; 
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .consulta-online ul li {
-    background-color: #f7f3f0; /* Fundo suave para cada item da lista */
+    background-color: #f7f3f0; 
     padding: 10px 15px;
     margin-bottom: 8px;
     border-radius: 8px;
-    display: flex; /* Para alinhar o ícone e texto se quiser adicionar um */
+    display: flex; 
     align-items: center;
     color: #4B3B2A;
     font-size: 1em;
@@ -321,17 +373,17 @@ body::before {
 }
 
 .consulta-online ul li::before {
-    content: '✓'; /* Ícone de checkmark */
-    color: #D17C4B; /* Cor do checkmark */
+    content: '✓'; 
+    color: #D17C4B; 
     font-weight: bold;
     margin-right: 10px;
 }
 
-/* Responsividade básica para telas menores */
+
 @media (max-width: 768px) {
     .consulta-online {
         padding: 25px;
-        margin: 40px 15px; /* Margem menor nas laterais para mobile */
+        margin: 40px 15px; 
     }
 
     .consulta-online h2 {
@@ -347,25 +399,18 @@ body::before {
         font-size: 0.95em;
     }
 }
-.sobre {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  max-width: 1200px;
-  margin: auto;
-  opacity: 90%;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  gap: 40px;
+@media (max-width: 768px) {
+  .sobre {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+        
 }
-
 .text-content {
   flex: 1;
   padding-right: 20px;
 }
-
 .text-content h1 {
   font-size: 2.5rem;
   color: #2c3e50;
@@ -399,38 +444,45 @@ body::before {
 }
 
 .image-content img {
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 .contato {
-    opacity: 80%; /* Opacidade para suavizar o fundo */
+    align-items: center;;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    opacity: 0.7;
     background-color: #ffffff;
-  background: linear-gradient(135deg, #f0f4f8, #ffffff);
-  padding: 50px;
-  max-width: 800px;
-  margin: 60px auto;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  font-family: 'Segoe UI', sans-serif;
-  color: #2c3e50;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    padding: 30px; 
+    max-width: 100%; 
+    margin: 60px auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    box-sizing: border-box; 
 }
 
-.contato-container h2 {
+/* MOBILE */
+@media (max-width: 768px) {
+    .contato {
+        flex-direction: column;
+        padding: 20px; 
+        gap: 20px
+    }}
+.contato h2 {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #27ae60;
 }
-
-.contato-container p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.contato-info p {
+.contato p {
   margin: 8px 0;
   font-size: 1rem;
+ 
 }
 .contato-botoes {
   display: flex;
@@ -467,17 +519,28 @@ body::before {
   background-color: #c1275d;
 }
 #dinamicImage {
-  width: 100%; /* ou defina um tamanho fixo */
+  width: 100%; 
   height: auto;
   transition: opacity 1s ease-in-out;
   opacity: 1;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }}
 
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
 
-
-
-
-
-
-
+  .imagem img {
+    width: 100%;
+    height: auto;
+  }
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }}

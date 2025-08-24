@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const imagens = [
-"imagens/Foto1.jpg",
-"imagens/Foto2.jpg",
-"imagens/Foto3.jpg",
-"imagens/Foto4.jpg"
+"Foto1.jpg",
+"Foto2.jpg",
+"Foto3.jpg",
+"Foto4.jpg"
 ];
 let indiceatual = 0;
 function trocarImagem  () {
