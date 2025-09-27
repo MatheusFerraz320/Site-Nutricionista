@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<header>    
-    <div class="header-container">   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabrielle Ferraz | Nutricionista</title>
+
+    <!-- SEO essencial -->
+    <meta
+      name="description"
+      content="Gabrielle Ferraz oferece nutrição clínica, esportiva e emagrecimento saudável na Baixada Santista. Atendimento presencial e online."
+    />
+    <meta name="author" content="Gabrielle Ferraz" />
+
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Gabrielle Ferraz | Nutricionista" />
+    <meta
+      property="og:description"
+      content="Nutrição personalizada com excelência e cuidado na Baixada Santista."
+    />
+    <meta
+      property="og:image"
+      content="https://www.seusite.com.br/imagens/og-image.jpg"
+    />
+    <meta property="og:url" content="https://www.seusite.com.br" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon" />
+
+    <!-- Fontes para uso via CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
         <h1>Gabrielle Ferraz Nutricionista</h1>
         <ul class="nav-links">
-            <li><a href="index.html">Sobre</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="contato.html">Contato</a></li>
-            <li><a href= "calculadoraimc.html">Calcule seu imc</a></li>
-            <li><a href= "depoimentos.html">Depoimentos</a></li>
+          <li><a href="index.html">Sobre</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="calculadoraimc.html">Calcule seu IMC</a></li>
+          <li><a href="depoimentos.html">Depoimentos</a></li>
         </ul>
+      </div>
+    </header>
+
+    <div id="imc-calculator-section" class="imc-section">
+      <h2>Calculadora de IMC</h2>
+      <p>
+        Use esta ferramenta para estimar seu Índice de Massa Corporal e entender
+        melhor sua saúde.
+      </p>
+
+      <div class="imc-benefits">
+        <strong>Benefícios de conhecer seu IMC:</strong>
+        <ul>
+          <li>Ajuda a identificar riscos à saúde relacionados ao peso.</li>
+          <li>
+            Classifica o estado nutricional com base na relação entre peso e
+            altura.
+          </li>
+        </ul>
+      </div>
+
+      <form class="imc-form-container">
+        <div class="form-group">
+          <label for="peso">Peso (kg):</label>
+          <input
+            type="number"
+            id="peso"
+            class="input"
+            name="peso"
+            placeholder="Ex: 70.5"
+            step="0.1"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="altura">Altura (m):</label>
+          <input
+            type="number"
+            id="altura"
+            class="input"
+            placeholder="Ex: 1.75"
+            step="0.01"
+            required
+          />
+        </div>
+
+        <button type="button" id="calcular-btn">Calcular</button>
+        <div id="resultado" class="resultado-container"></div>
+      </form>
     </div>
-</header>
-<section id="imc-calculator-section" class="imc-section">
-            <h2>Calculadora de IMC</h2>
-            <p>Com base nesta ferramenta, você poderá ter uma noção do seu Índice de Massa Corporal.</p>
-            <ul>
-                <strong>Benefícios de conhecer seu IMC:</strong>
-                <li>Indicador de Risco à Saúde.</li> 
-                <li>Identificação de Peso Corporal: Ajuda a classificar o estado nutricional de uma pessoa.</li>
-            </ul>
 
-            <form class="imc-form-container">
-                <div class="form-group">
-                    <label for="peso">Peso (kg):</label>
-                    <input 
-                        type="number"
-                        id="peso"
-                        class="input" 
-                        name="peso"
-                        placeholder="Ex: 70.5"
-                        step="0.1"
-                        required>
-                </div>
-                <div class="form-group"> <!-- Corrigido: era form_group -->
-                    <label for="altura">Altura (m):</label>
-                    <input
-                        class="input" 
-                        type="number"
-                        id="altura"
-                        placeholder="Ex: 1.75"
-                        step="0.01"
-                        required>
-                </div>
-                <!-- Botão de cálculo com ID para o JavaScript -->
-                <button type="button" id="calcular-btn">Calcular</button>
-                <!-- Div para exibir o resultado - MOVVIDA PARA FORA DO BOTÃO -->
-                <div id="resultado" class="resultado-container"></div>
-            </form>
-        </section>
-        
-
-
-
-
-
-
-<script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

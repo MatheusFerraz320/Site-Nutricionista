@@ -1,403 +1,426 @@
-
 /* ===== RESET BÁSICO ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* ===== HEADER ===== */
 header {
-    background: #f5e6d3; /* cor nude */
-    border-bottom: 2px solid #ddd;
+  background: #f5e6d3; /* cor nude */
+  border-bottom: 2px solid #ddd;
 }
 
 .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    flex-direction:row;
-    display: flex;
-    justify-content: space-between; /* título à esquerda, links à direita */
-    align-items: left;
-    flex-wrap:wrap;
-    overflow-x:hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between; /* título à esquerda, links à direita */
+  align-items: left;
+  flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
 /* Título */
 header h1 {
-    font-size: 1.5rem;
-    color: #4b2e2e; /* marrom */
+  font-size: 1.5rem;
+  color: #4b2e2e; /* marrom */
 }
 
 /* ===== NAVIGATION ===== */
 .nav-links {
-    list-style: none;
-    display: flex;           /* coloca os <li> lado a lado */
-    flex-direction: row; /* garante que fiquem na horizontal */
-    gap: 25px;    /* espaço entre os links */
-    flex-wrap:wrap;
-    margin:0;
-    padding:0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 
 .nav-links li {
-    display: inline-block; /* cada link ocupa apenas o necessário */
+  display: inline-block; /* cada link ocupa apenas o necessário */
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #4b2e2e; /* marrom padrão */
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #4b2e2e;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #8b4513; /* marrom mais forte no hover */
+  color: #8b4513; /* marrom mais forte no hover */
 }
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        align-items: left;
-    }
+  .header-container {
+    flex-direction: row;
+    align-items: left;
+  }
 
-    .nav-links {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+  .nav-links {
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-    header h1 {
-        font-size: 1.2rem;
-    }
+  header h1 {
+    font-size: 1.2rem;
+  }
 }
-.sobre {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-      width: 100%;
-  box-sizing: border-box;
+.sobre-container {
   display: flex;
+  flex-direction: row; /* garante texto à esquerda, imagem à direita */
+  align-items: flex-start;
   justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  max-width: 100%;
-  margin: auto;
-  opacity: 0.9;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.text-content h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #27ae60;
+.text-content {
+  flex: 2;
+  min-width: 300px;
+  max-width: 700px;
+  text-align: center;
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.85); /* tom nude com transparência */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.image-content {
+  flex: 1;
+  max-width: 400px;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
 
 @media (max-width: 480px) {
-    .text-content h2 {
-        font-size: 1.5rem;
-    }
+  .text-content h2 {
+    font-size: 1.5rem;
+  }
 }
 body {
-    font-size: 14px;
-    background-image: url('logo.jpeg'); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
-    min-height: 100vh;
-    position: relative; /* Necessário para o pseudo-elemento */
+  font-size: 14px;
+  background-image: url("logo.jpeg"); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  min-height: 100vh;
+  position: relative; /* Necessário para o pseudo-elemento */
 }
 
 /* Cria uma camada escura semi-transparente sobre o fundo */
 body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f5e1d1b8; /* O quarto valor (0.4) controla a opacidade. Ajuste de 0.1 a 0.9 para o escurecimento desejado. */
-    z-index: -1; /* Coloca a camada atrás do conteúdo */
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f5e1d1b8; /* O quarto valor (0.4) controla a opacidade. Ajuste de 0.1 a 0.9 para o escurecimento desejado. */
+  z-index: -1; /* Coloca a camada atrás do conteúdo */
 }
 /* Estilos para o contêiner principal dos depoimentos */
 .depoimentos {
-    opacity: 0.9; /* Opacidade para suavizar o fundo */
-    padding: 60px 20px;
-    background-color: #ffffff; /* Fundo suave para a seção */
-    text-align: center; /* Centraliza o texto e o Flexbox */
-    display: flex; /* Usa Flexbox para organizar as imagens */
-    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
-    justify-content: center; /* Centraliza as imagens horizontalmente */
-    gap: 25px; /* Espaço entre as imagens */
-    max-width: 1200px; /* Limita a largura do contêiner */
-    margin: 50px auto; /* Centraliza o contêiner na página */
-    border-radius: 15px; /* Bordas arredondadas para a seção */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para a seção */
-    flex-direction: column; /* Organiza os itens (título, parágrafos, imagens) em coluna */
-    align-items: center; /* Centraliza os itens na coluna */
+  opacity: 0.9; /* Opacidade para suavizar o fundo */
+  padding: 60px 20px;
+  background-color: #ffffff; /* Fundo suave para a seção */
+  text-align: center; /* Centraliza o texto e o Flexbox */
+  display: flex; /* Usa Flexbox para organizar as imagens */
+  flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  gap: 25px; /* Espaço entre as imagens */
+  max-width: 1200px; /* Limita a largura do contêiner */
+  margin: 50px auto; /* Centraliza o contêiner na página */
+  border-radius: 15px; /* Bordas arredondadas para a seção */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para a seção */
+  flex-direction: column; /* Organiza os itens (título, parágrafos, imagens) em coluna */
+  align-items: center; /* Centraliza os itens na coluna */
 }
 
 /* Estilos para o título dentro da div depoimentos */
 .depoimentos h2 {
-    color: #4B3B2A;
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    text-align: center;
-    max-width: 800px; /* Limita a largura do título para melhor leitura */
+  color: #4b3b2a;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  text-align: center;
+  max-width: 800px; /* Limita a largura do título para melhor leitura */
 }
 
 /* Estilos para os parágrafos dentro da div depoimentos */
 .depoimentos p {
-    color: #6B4F3C;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    text-align: center;
-    max-width: 700px; /* Limita a largura do parágrafo */
+  color: #6b4f3c;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  text-align: center;
+  max-width: 700px; /* Limita a largura do parágrafo */
 }
 
 /* Adicione um espaçamento maior após os parágrafos antes das imagens */
 .depoimentos p:last-of-type {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 /* Estilos para cada imagem de depoimento */
 .depoimentos img {
-    /* Mantém os estilos existentes das imagens */
-    width: 100%; /* Ocupa 100% da largura do seu contêiner flex */
-    max-width: 300px; /* Largura máxima para cada imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 10px; /* Bordas arredondadas para as imagens */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para as imagens */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
-    /* Como o contêiner .depoimentos agora é flex-direction: column,
+  /* Mantém os estilos existentes das imagens */
+  width: 100%; /* Ocupa 100% da largura do seu contêiner flex */
+  max-width: 300px; /* Largura máxima para cada imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 10px; /* Bordas arredondadas para as imagens */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para as imagens */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+  /* Como o contêiner .depoimentos agora é flex-direction: column,
        as imagens também se beneficiarão do 'gap' e 'align-items: center' */
 }
 
 /* Efeito ao passar o mouse sobre as imagens */
 .depoimentos img:hover {
-    transform: translateY(-5px) scale(1.02); /* Leve "salto" e aumento */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Sombra mais intensa */
+  transform: translateY(-5px) scale(1.02); /* Leve "salto" e aumento */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Sombra mais intensa */
 }
 
 /* Responsividade: Ajusta o tamanho das imagens e do container em telas menores */
 @media (max-width: 768px) {
-    .depoimentos {
-        padding: 30px 10px; /* Reduz o padding em telas menores */
-        gap: 15px; /* Reduz o espaço entre os elementos */
-    }
+  .depoimentos {
+    padding: 30px 10px; /* Reduz o padding em telas menores */
+    gap: 15px; /* Reduz o espaço entre os elementos */
+  }
 
-    .depoimentos h2 {
-        font-size: 1.8em;
-    }
+  .depoimentos h2 {
+    font-size: 1.8em;
+  }
 
-    .depoimentos p {
-        font-size: 1em;
-    }
+  .depoimentos p {
+    font-size: 1em;
+  }
 
-    .depoimentos img {
-        max-width: 90%; /* Permite que as imagens ocupem mais espaço em telas pequenas */
-    }
+  .depoimentos img {
+    max-width: 90%; /* Permite que as imagens ocupem mais espaço em telas pequenas */
+  }
 }
 
-
-
 .imc-section {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    opacity: 0.7;
-    background-color: #fefefe;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  opacity: 0.7;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .imc-section h2 {
-    color: #4B3B2A;
-    margin-bottom: 20px;
+  color: #4b3b2a;
+  margin-bottom: 20px;
 }
 
-.imc-section p, .imc-section ul {
-    font-size: 1.1em;
-    color: #6B4F3C;
-    line-height: 1.6;
-    text-align: left; /* Alinha o texto da descrição e lista à esquerda */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 80%; /* Para não ocupar 100% da largura, deixando margens */
+.imc-section p,
+.imc-section ul {
+  font-size: 1.1em;
+  color: #6b4f3c;
+  line-height: 1.6;
+  text-align: left; /* Alinha o texto da descrição e lista à esquerda */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%; /* Para não ocupar 100% da largura, deixando margens */
 }
 
 .imc-section ul {
-    list-style: disc;
-    padding-left: 20px;
+  list-style: disc;
+  padding-left: 20px;
 }
 
 /* Container do formulário IMC para garantir alinhamento em coluna */
 .imc-form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espaço entre os campos */
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaço entre os campos */
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Estilo para a div de resultado */
 .resultado-container {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    background-color: #e9ecef;
-    border: 1px solid #dee2e6;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  background-color: #e9ecef;
+  border: 1px solid #dee2e6;
 }
 
 /* Estilos para as classificações de IMC (cores) */
-.abaixo-peso { color: #2196f3; /* Azul */ }
-.peso-normal { color: #4CAF50; /* Verde */ }
-.sobrepeso { color: #FFC107; /* Amarelo */ }
-.obesidade-grau-1 { color: #FF9800; /* Laranja */ }
-.obesidade-grau-2 { color: #FF5722; /* Laranja avermelhado */ }
-.obesidade-grau-3 { color: #F44336; /* Vermelho */ }
+.abaixo-peso {
+  color: #2196f3; /* Azul */
+}
+.peso-normal {
+  color: #4caf50; /* Verde */
+}
+.sobrepeso {
+  color: #ffc107; /* Amarelo */
+}
+.obesidade-grau-1 {
+  color: #ff9800; /* Laranja */
+}
+.obesidade-grau-2 {
+  color: #ff5722; /* Laranja avermelhado */
+}
+.obesidade-grau-3 {
+  color: #f44336; /* Vermelho */
+}
 
 /* Mensagem de erro */
 .error-message {
-    color: #dc3545; /* Vermelho */
-    font-weight: normal;
+  color: #dc3545; /* Vermelho */
+  font-weight: normal;
 }
 /* Estilos para o contêiner principal da consulta online */
 .consulta-online {
-    max-width: 800px; /* Largura máxima para centralizar o conteúdo */
-    margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
-    padding: 40px;
-    background-color: #fff; /* Fundo branco para a caixa */
-    opacity: 0.7; /* Opacidade para suavizar o fundo */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
-    font-family: Arial, sans-serif;
-    color: #333; /* Cor de texto padrão */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+  max-width: 800px; /* Largura máxima para centralizar o conteúdo */
+  margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
+  padding: 40px;
+  background-color: #fff; /* Fundo branco para a caixa */
+  opacity: 0.7; /* Opacidade para suavizar o fundo */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+  font-family: Arial, sans-serif;
+  color: #333; /* Cor de texto padrão */
+  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
 }
 
 /* Estilo para o título principal da seção */
-.consulta-online h1,h3,h4,h5,h6{
-    color: #4B3B2A; /* Cor mais escura para o título */
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    text-align: center;
+.consulta-online h1,
+h3,
+h4,
+h5,
+h6 {
+  color: #4b3b2a; /* Cor mais escura para o título */
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Estilo para os parágrafos de introdução */
 .consulta-online p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    text-align: center; /* Centraliza parágrafos curtos */
-    color: #6B4F3C; /* Cor de texto mais suave */
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  text-align: center; /* Centraliza parágrafos curtos */
+  color: #6b4f3c; /* Cor de texto mais suave */
 }
 
 /* Estilo para o subtítulo "Passo a passo" */
 .consulta-online h3 {
-    color: #D17C4B; /* Cor de destaque para o subtítulo */
-    font-size: 1.6em;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-    border-bottom: 2px solid #D17C4B; /* Linha de destaque abaixo do título */
-    padding-bottom: 10px;
+  color: #d17c4b; /* Cor de destaque para o subtítulo */
+  font-size: 1.6em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid #d17c4b; /* Linha de destaque abaixo do título */
+  padding-bottom: 10px;
 }
 
 /* Estilo para o texto "Antes da consulta" */
 .consulta-online p strong {
-    color: #4B3B2A; /* Cor mais escura para o texto em negrito */
-    font-size: 1.1em;
-    display: block; /* Garante que o strong ocupe sua própria linha */
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center; /* Centraliza o texto em negrito */
+  color: #4b3b2a; /* Cor mais escura para o texto em negrito */
+  font-size: 1.1em;
+  display: block; /* Garante que o strong ocupe sua própria linha */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center; /* Centraliza o texto em negrito */
 }
 
 /* Estilo para os parágrafos de detalhes */
-.consulta-online p:not(.consulta-online p strong) { /* Seleciona parágrafos que não são o strong */
-    font-size: 1em;
-    text-align: left; /* Alinha o texto detalhado à esquerda */
-    margin-left: 20px; /* Pequeno recuo */
-    margin-right: 20px;
-    color: #5C4033;
+.consulta-online p:not(.consulta-online p strong) {
+  /* Seleciona parágrafos que não são o strong */
+  font-size: 1em;
+  text-align: left; /* Alinha o texto detalhado à esquerda */
+  margin-left: 20px; /* Pequeno recuo */
+  margin-right: 20px;
+  color: #5c4033;
 }
 
-
-
 .consulta-online ul {
-    list-style: none; 
-    padding-left: 0;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: left; 
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .consulta-online ul li {
-    background-color: #f7f3f0; 
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    display: flex; 
-    align-items: center;
-    color: #4B3B2A;
-    font-size: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background-color: #f7f3f0;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  color: #4b3b2a;
+  font-size: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .consulta-online ul li::before {
-    content: '✓'; 
-    color: #D17C4B; 
-    font-weight: bold;
-    margin-right: 10px;
+  content: "✓";
+  color: #d17c4b;
+  font-weight: bold;
+  margin-right: 10px;
 }
 
-
 @media (max-width: 768px) {
-    .consulta-online {
-        padding: 25px;
-        margin: 40px 15px; 
-    }
+  .consulta-online {
+    padding: 25px;
+    margin: 40px 15px;
+  }
 
-    .consulta-online h2 {
-        font-size: 1.8em;
-    }
+  .consulta-online h2 {
+    font-size: 1.8em;
+  }
 
-    .consulta-online h3 {
-        font-size: 1.4em;
-    }
+  .consulta-online h3 {
+    font-size: 1.4em;
+  }
 
-    .consulta-online p,
-    .consulta-online ul li {
-        font-size: 0.95em;
-    }
+  .consulta-online p,
+  .consulta-online ul li {
+    font-size: 0.95em;
+  }
 }
 @media (max-width: 768px) {
   .sobre {
@@ -405,7 +428,6 @@ body::before {
     padding: 30px 20px;
     gap: 20px;
   }
-        
 }
 .text-content {
   flex: 1;
@@ -450,30 +472,31 @@ body::before {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 .contato {
-    align-items: center;;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; 
-    opacity: 0.7;
-    background-color: #ffffff;
-    background: linear-gradient(135deg, #f0f4f8, #ffffff);
-    padding: 30px; 
-    max-width: 100%; 
-    margin: 60px auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', sans-serif;
-    color: #2c3e50;
-    box-sizing: border-box; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  opacity: 0.7;
+  background-color: #ffffff;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  padding: 30px;
+  max-width: 100%;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+  color: #2c3e50;
+  box-sizing: border-box;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .contato {
-        flex-direction: column;
-        padding: 20px; 
-        gap: 20px
-    }}
+  .contato {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+}
 .contato h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -482,7 +505,6 @@ body::before {
 .contato p {
   margin: 8px 0;
   font-size: 1rem;
- 
 }
 .contato-botoes {
   display: flex;
@@ -504,7 +526,7 @@ body::before {
 }
 
 .whatsapp-button {
-  background-color: #25D366;
+  background-color: #25d366;
 }
 
 .whatsapp-button:hover {
@@ -512,14 +534,14 @@ body::before {
 }
 
 .instagram-button {
-  background-color: #E1306C;
+  background-color: #e1306c;
 }
 
 .instagram-button:hover {
   background-color: #c1275d;
 }
 #dinamicImage {
-  width: 100%; 
+  width: 100%;
   height: auto;
   transition: opacity 1s ease-in-out;
   opacity: 1;
@@ -529,18 +551,20 @@ body::before {
   body {
     font-size: 16px;
     padding: 10px;
-  }}
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
   }
+}
 
-  .imagem img {
-    width: 100%;
-    height: auto;
-  }
+.menu {
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagem img {
+  width: 100%;
+  height: auto;
+}
 @media (max-width: 768px) {
   .container {
     padding: 10px;
-  }}
+  }
+}
