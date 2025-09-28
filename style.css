@@ -19,6 +19,120 @@ body {
   color: #333;
 }
 
+.imc-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.imc-section h2,
+.imc-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.imc-section p,
+.imc-section ul {
+  margin-bottom: 20px;
+}
+
+.imc-section ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.imc-form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#calcular-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #f5e6dc, #d8bfa3);
+  color: #3d2c23;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#calcular-btn:hover {
+  background: linear-gradient(135deg, #e8d4c3, #c7a88e);
+}
+
+#validaçao {
+  color: red;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.resultado {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.resultado-abaixo-peso {
+  color: orange;
+}
+
+.resultado-peso-normal {
+  color: green;
+}
+
+.resultado-sobrepeso {
+  color: goldenrod;
+}
+
+.resultado-obesidade-1 {
+  color: darkorange;
+}
+
+.resultado-obesidade-2 {
+  color: orangered;
+}
+
+.resultado-obesidade-3 {
+  color: red;
+}
+
+
 header {
   background: #f5e6d3; 
   border-bottom: 2px solid #ddd;
@@ -229,232 +343,102 @@ body::before {
     max-width: 90%; 
   }
 }
-.imc-section {
-  max-width: 600px;
+
+.servicos-intro,
+.servicos-avulsa,
+.servicos-planos {
+  font-family: 'Poppins', sans-serif;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 30px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-}
-
-.imc-section h2,
-.imc-section h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.imc-section p,
-.imc-section ul {
-  margin-bottom: 20px;
-}
-
-.imc-section ul {
-  padding-left: 0;
-  list-style-position: inside;
-}
-
-.imc-form-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-}
-
-.form-group label {
-  margin-bottom: 6px;
-  font-weight: 500;
+  padding: 2rem 1rem;
   color: #333;
 }
 
-.input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-#calcular-btn {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #f5e6dc, #d8bfa3);
-  color: #3d2c23;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#calcular-btn:hover {
-  background: linear-gradient(135deg, #e8d4c3, #c7a88e);
-}
-
-#validaçao {
-  color: red;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.resultado {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-}
-
-.resultado-abaixo-peso {
-  color: orange;
-}
-
-.resultado-peso-normal {
-  color: green;
-}
-
-.resultado-sobrepeso {
-  color: goldenrod;
-}
-
-.resultado-obesidade-1 {
-  color: darkorange;
-}
-
-.resultado-obesidade-2 {
-  color: orangered;
-}
-
-.resultado-obesidade-3 {
-  color: red;
-}
-
-.consulta-online {
-  max-width: 800px; /* Largura máxima para centralizar o conteúdo */
-  margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
-  padding: 40px;
-  background-color: #fff; /* Fundo branco para a caixa */
-  opacity: 0.7; /* Opacidade para suavizar o fundo */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
-  font-family: Arial, sans-serif;
-  color: #333; /* Cor de texto padrão */
-  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
-}
-
-/* Estilo para o título principal da seção */
-.consulta-online h1,
-h3,
-h4,
-h5,
-h6 {
-  color: #4b3b2a; /* Cor mais escura para o título */
-  font-size: 2.2em;
-  margin-bottom: 20px;
+.servicos-intro h1,
+.servicos-avulsa h2,
+.servicos-planos h2 {
   text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
 }
 
-/* Estilo para os parágrafos de introdução */
-.consulta-online p {
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  text-align: center; /* Centraliza parágrafos curtos */
-  color: #6b4f3c; /* Cor de texto mais suave */
-}
 
-/* Estilo para o subtítulo "Passo a passo" */
-.consulta-online h3 {
-  color: #d17c4b; /* Cor de destaque para o subtítulo */
-  font-size: 1.6em;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  text-align: center;
-  border-bottom: 2px solid #d17c4b; /* Linha de destaque abaixo do título */
-  padding-bottom: 10px;
-}
-
-/* Estilo para o texto "Antes da consulta" */
-.consulta-online p strong {
-  color: #4b3b2a; /* Cor mais escura para o texto em negrito */
-  font-size: 1.1em;
-  display: block; /* Garante que o strong ocupe sua própria linha */
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-align: center; /* Centraliza o texto em negrito */
-}
-
-/* Estilo para os parágrafos de detalhes */
-.consulta-online p:not(.consulta-online p strong) {
-  /* Seleciona parágrafos que não são o strong */
-  font-size: 1em;
-  text-align: left; /* Alinha o texto detalhado à esquerda */
-  margin-left: 20px; /* Pequeno recuo */
-  margin-right: 20px;
-  color: #5c4033;
-}
-
-.consulta-online ul {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  text-align: left;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.consulta-online ul li {
-  background-color: #f7f3f0;
-  padding: 10px 15px;
-  margin-bottom: 8px;
-  border-radius: 8px;
+.passo-a-passo {
   display: flex;
-  align-items: center;
-  color: #4b3b2a;
-  font-size: 1em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.consulta-online ul li::before {
-  content: "✓";
-  color: #d17c4b;
-  font-weight: bold;
-  margin-right: 10px;
+.passo-card {
+  background-color: #f9f9f9;
+  border-left: 6px solid #4caf50;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-@media (max-width: 768px) {
-  .consulta-online {
-    padding: 25px;
-    margin: 40px 15px;
-  }
-
-  .consulta-online h2 {
-    font-size: 1.8em;
-  }
-
-  .consulta-online h3 {
-    font-size: 1.4em;
-  }
-
-  .consulta-online p,
-  .consulta-online ul li {
-    font-size: 0.95em;
-  }
+.passo-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
 }
+
+.passo-card p,
+.passo-card ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card-avulsa {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.card-avulsa ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.card ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+
 @media (max-width: 768px) {
   .sobre {
     flex-direction: column;
