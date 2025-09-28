@@ -1,3 +1,20 @@
+let indiceAtual = 0;
+
+const imagens = [
+  "imagens/Foto1.jpg",
+  "imagens/Foto2.jpg",
+  "imagens/Foto4.jpg"
+];
+
+function trocarImagem() {
+  indiceAtual = (indiceAtual + 1) % imagens.length;
+  const img = document.getElementById("dinamicImage");
+    img.src = imagens[indiceAtual];
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(trocarImagem, 3000);
+});
 
 function calcularIMC() {
   const peso = parseFloat(document.getElementById("peso").value);
@@ -44,25 +61,4 @@ function calcularIMC() {
   `;
 }
 document.getElementById("calcular-btn").addEventListener("click", calcularIMC);
-
-let indiceAtual = 0;
-
-const imagens = [
-  "imagens/Foto1.jpg",
-  "imagens/Foto2.jpg",
-  "imagens/Foto3.jpg",
-  "imagens/Foto4.jpg"
-];
-
-function trocarImagem() {
-  indiceAtual = (indiceAtual + 1) % imagens.length;
-  document.getElementById("dinamicImage").src = imagens[indiceAtual];
-}
-
-window.addEventListener  ("load" , function () {
-  setInterval(trocarImagem, 3000);
-});
-
-
-
 

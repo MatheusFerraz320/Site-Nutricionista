@@ -13,11 +13,6 @@
   animation: slideIn 2.5s ease-out forwards;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
 
 .imc-section {
   max-width: 600px;
@@ -141,7 +136,7 @@ header {
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 10px 15px;
   flex-direction: row;
   display: flex;
   justify-content: space-between; 
@@ -151,8 +146,13 @@ header {
 }
 
 header h1 {
-  font-size: 1.5rem;
-  color: #4b2e2e; /* marrom */
+  font-size: 1.8rem;
+  color: linear-gradient(135deg, #fbe8d3, #f6d7b0, #f3c6c0, #e8b3d0, #d9a7c7);
+
+
+  font-family: 'Dancing Script', cursive;
+
+
 }
 
 /* ===== NAVIGATION ===== */
@@ -163,16 +163,17 @@ header h1 {
   gap: 25px;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 30px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
 .nav-links li {
-  display: inline-block; /* cada link ocupa apenas o necessário */
+  display: inline-block; 
 }
 
 .nav-links a {
+  margin-top:10px;
   text-decoration: none;
   color: #4b2e2e;
   font-weight: bold;
@@ -202,26 +203,54 @@ header h1 {
 }
 .sobre-container {
   display: flex;
-  flex-direction: row; /* garante texto à esquerda, imagem à direita */
+  flex-direction: row;
+  flex: 1;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  flex-wrap: wrap;
 }
+.sobre-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f6d365, #fda085, #fbc27b, #ffd700, #f9a825);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 
 .text-content {
   flex: 2;
   min-width: 300px;
   max-width: 700px;
   text-align: center;
-  opacity: 0.9;
-  background-color: rgba(255, 255, 255, 0.85); /* tom nude com transparência */
+  background-color: rgba(255, 255, 255, 0.85);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #3e3e3e;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
 }
+
+
+.text-content p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #3e3e3e;
+}
+
+
 
 .image-content {
   flex: 1;
@@ -233,6 +262,12 @@ header h1 {
   height: auto;
   border-radius: 10px;
   object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.image-content img.fade {
+  opacity: 0;
 }
 
 @media (max-width: 480px) {
@@ -241,107 +276,13 @@ header h1 {
   }
 }
 body {
-  font-size: 14px;
-  background-image: url("imagens/logo.jpeg"); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
+  flex-direction: column;
+  background-image: url("imagens/logo.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   margin: 0;
-  font-family: "Times New Roman", Times, serif, sans-serif;
-  min-height: 100vh;
-  position: relative; /* Necessário para o pseudo-elemento */
-}
-
-/* Cria uma camada escura semi-transparente sobre o fundo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f5e1d1b8; /* O quarto valor (0.4) controla a opacidade. Ajuste de 0.1 a 0.9 para o escurecimento desejado. */
-  z-index: -1; /* Coloca a camada atrás do conteúdo */
-}
-/* Estilos para o contêiner principal dos depoimentos */
-.depoimentos {
-  opacity: 0.9; /* Opacidade para suavizar o fundo */
-  padding: 60px 20px;
-  background-color: #ffffff; /* Fundo suave para a seção */
-  text-align: center; /* Centraliza o texto e o Flexbox */
-  display: flex; /* Usa Flexbox para organizar as imagens */
-  flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
-  justify-content: center; /* Centraliza as imagens horizontalmente */
-  gap: 25px; /* Espaço entre as imagens */
-  max-width: 1200px; /* Limita a largura do contêiner */
-  margin: 50px auto; /* Centraliza o contêiner na página */
-  border-radius: 15px; /* Bordas arredondadas para a seção */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para a seção */
-  flex-direction: column; /* Organiza os itens (título, parágrafos, imagens) em coluna */
-  align-items: center; /* Centraliza os itens na coluna */
-}
-
-/* Estilos para o título dentro da div depoimentos */
-.depoimentos h2 {
-  color: #4b3b2a;
-  font-size: 2.2em;
-  margin-bottom: 15px;
-  text-align: center;
-  max-width: 800px; /* Limita a largura do título para melhor leitura */
-}
-
-/* Estilos para os parágrafos dentro da div depoimentos */
-.depoimentos p {
-  color: #6b4f3c;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  text-align: center;
-  max-width: 700px; /* Limita a largura do parágrafo */
-}
-
-/* Adicione um espaçamento maior após os parágrafos antes das imagens */
-.depoimentos p:last-of-type {
-  margin-bottom: 30px;
-}
-
-/* Estilos para cada imagem de depoimento */
-.depoimentos img {
-  /* Mantém os estilos existentes das imagens */
-  width: 100%; /* Ocupa 100% da largura do seu contêiner flex */
-  max-width: 300px; /* Largura máxima para cada imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border-radius: 10px; /* Bordas arredondadas para as imagens */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra para as imagens */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para efeitos */
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
-  /* Como o contêiner .depoimentos agora é flex-direction: column,
-       as imagens também se beneficiarão do 'gap' e 'align-items: center' */
-}
-
-/* Efeito ao passar o mouse sobre as imagens */
-.depoimentos img:hover {
-  transform: translateY(-5px) scale(1.02); 
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); 
-}
-
-@media (max-width: 768px) {
-  .depoimentos {
-    padding: 30px 10px; 
-    gap: 15px; 
-  }
-
-  .depoimentos h2 {
-    font-size: 1.8em;
-  }
-
-  .depoimentos p {
-    font-size: 1em;
-  }
-
-  .depoimentos img {
-    max-width: 90%; 
-  }
 }
 
 .servicos-intro,
@@ -352,6 +293,7 @@ body::before {
   margin: 0 auto;
   padding: 2rem 1rem;
   color: #333;
+  opacity: 0.9;
 }
 
 .servicos-intro h1,
@@ -440,27 +382,11 @@ body::before {
 
 
 @media (max-width: 768px) {
-  .sobre {
+  .sobre-container {
     flex-direction: column;
-    padding: 30px 20px;
+    align-items: center;
     gap: 20px;
   }
-}
-.text-content {
-  flex: 1;
-  padding-right: 20px;
-}
-.text-content h1 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-.text-content p {
-  font-size: 1.2rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 30px;
 }
 
 .cta-button {
@@ -584,4 +510,107 @@ body::before {
   .container {
     padding: 10px;
   }
+}
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-content img,
+  .imagem img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.rodape {
+  background-color: #f5e9e2;
+  color: #5a4a42;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  margin-top: auto;
+}
+
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: #5a4a42;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a67c6b;
+}
+
+
+.depoimentos-container {
+  max-width: 900px;
+  background: linear-gradient(135deg, #f5e9e2, #ffffff);
+  opacity: 1.0;
+  padding: 60px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  text-align: center;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.depoimentos.container , h2
+  {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #27ae60;
+}
+
+.depoimentos .intro {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.depoimentos-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.depoimentos-galeria figure {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.depoimentos-galeria figure:hover {
+  transform: translateY(-5px);
+}
+
+.depoimentos-galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.depoimentos-galeria figcaption {
+  font-size: 1rem;
+  font-style: italic;
+  color: #555;
 }
