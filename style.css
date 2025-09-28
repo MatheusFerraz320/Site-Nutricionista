@@ -197,24 +197,38 @@ header h1 {
   color: #8b4513; /* marrom mais forte no hover */
 }
 
-/* ===== RESPONSIVIDADE ===== */
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #4b2e2e;
+  cursor: pointer;
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+  .menu-toggle {
+    display: block;
+    margin-right: 20px;
   }
 
   .nav-links {
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fbeae6;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
   }
 
-  header h1 {
-    font-size: 1.4rem;
+  .nav-links.active {
+    display: flex;
   }
 }
+
 .sobre-container {
   display: flex;
   flex-direction: row;
@@ -552,39 +566,44 @@ body {
 
 .depoimentos-container {
   max-width: 900px;
-  background: linear-gradient(135deg, #f5e9e2, #ffffff);
-  opacity: 1;
-  padding: 60px 20px;
-  font-family: "Inter", sans-serif;
-  color: #2c3e50;
-  text-align: center;
+  background: linear-gradient(135deg, #f8e8e0, #fdf6f2);
+  padding: 60px 25px;
+  font-family: "Lora", serif;
+  color: #3e2f2f;
   margin: 40px auto;
-  padding: 30px 25px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
-.depoimentos.container,
-h2 {
+/* Título da seção */
+.depoimentos-container h2 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #27ae60;
+  color: #a9746e;
+  background: linear-gradient(90deg, #a9746e, #d9a7c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
-.depoimentos .intro {
+/* Texto introdutório */
+.depoimentos-container .intro {
   font-size: 1.2rem;
   margin-bottom: 40px;
   line-height: 1.6;
   opacity: 0.85;
+  text-align: center;
 }
 
+/* Galeria de depoimentos */
 .depoimentos-galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
+/* Cada depoimento */
 .depoimentos-galeria figure {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
@@ -597,6 +616,7 @@ h2 {
   transform: translateY(-5px);
 }
 
+/* Imagens dos depoimentos */
 .depoimentos-galeria img {
   width: 100%;
   height: auto;
@@ -604,8 +624,10 @@ h2 {
   margin-bottom: 15px;
 }
 
+/* Texto abaixo da imagem */
 .depoimentos-galeria figcaption {
   font-size: 1rem;
   font-style: italic;
-  color: #555;
+  color: #6e3b2e;
+  font-family: "Lora", serif;
 }
