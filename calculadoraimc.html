@@ -37,7 +37,7 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class = "slide-in">
     <header>
       <div class="header-container">
         <h1>Gabrielle Ferraz Nutricionista</h1>
@@ -51,55 +51,51 @@
       </div>
     </header>
 
-    <div id="imc-calculator-section" class="imc-section">
-      <h2>Calculadora de IMC</h2>
-      <p>
-        Use esta ferramenta para estimar seu Índice de Massa Corporal e entender
-        melhor sua saúde.
-      </p>
-
-      <div class="imc-benefits">
-        <strong>Benefícios de conhecer seu IMC:</strong>
-        <ul>
-          <li>Ajuda a identificar riscos à saúde relacionados ao peso.</li>
-          <li>
-            Classifica o estado nutricional com base na relação entre peso e
-            altura.
-          </li>
-        </ul>
-      </div>
-
-      <form class="imc-form-container">
-        <div class="form-group">
-          <label for="peso">Peso (kg):</label>
-          <input
-            type="number"
-            id="peso"
-            class="input"
-            name="peso"
-            placeholder="Ex: 70.5"
-            step="0.1"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="altura">Altura (m):</label>
-          <input
-            type="number"
-            id="altura"
-            class="input"
-            placeholder="Ex: 1.75"
-            step="0.01"
-            required
-          />
-        </div>
-
-        <button type="button" id="calcular-btn">Calcular</button>
-        <div id="resultado" class="resultado-container"></div>
-      </form>
+<div class="imc-section">
+  <h2><strong>Calculadora de IMC</h2>
+  </p>
+    <h3>Benefícios de conhecer seu IMC:</h3>
+    <ul>
+      <li>Ajuda a identificar riscos à saúde relacionados ao peso.</li>
+      <li>
+        Classifica o estado nutricional com base na relação entre peso e
+        altura.
+      </li>
+    </ul>
+  <div class="imc-form-container">
+    <div class="form-group">
+      <label for="peso">Peso (kg):</label>
+      <input
+        type="number"
+        id="peso"
+        class="input"
+        name="peso"
+        placeholder="Ex: 70.5"
+        step="0.1"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="altura">Altura (m):</label>
+      <input
+        type="number"
+        id="altura"
+        class="input"
+        placeholder="Ex: 1.75"
+        step="0.01"
+        required
+      />
     </div>
 
+    <!-- Resultado e validação ficam aqui, fora dos campos -->
+    <p id="resultado" class="resultado"></p>
+    <p id="validaçao"></p>
+
+    <button type="button" id="calcular-btn">Calcular</button>
+  </div>
+</div>
+  </div>
+</div>
     <script src="app.js"></script>
   </body>
 </html>

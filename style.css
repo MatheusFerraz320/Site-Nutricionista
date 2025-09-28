@@ -1,8 +1,16 @@
-/* ===== RESET BÁSICO ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 2.5s ease-out forwards;
 }
 
 body {
@@ -11,9 +19,8 @@ body {
   color: #333;
 }
 
-/* ===== HEADER ===== */
 header {
-  background: #f5e6d3; /* cor nude */
+  background: #f5e6d3; 
   border-bottom: 2px solid #ddd;
 }
 
@@ -23,13 +30,12 @@ header {
   padding: 15px 20px;
   flex-direction: row;
   display: flex;
-  justify-content: space-between; /* título à esquerda, links à direita */
+  justify-content: space-between; 
   align-items: left;
   flex-wrap: wrap;
   overflow-x: hidden;
 }
 
-/* Título */
 header h1 {
   font-size: 1.5rem;
   color: #4b2e2e; /* marrom */
@@ -122,7 +128,7 @@ header h1 {
 }
 body {
   font-size: 14px;
-  background-image: url("logo.jpeg"); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
+  background-image: url("imagens/logo.jpeg"); /* Substitua 'URL_DA_SUA_IMAGEM.jpg' pelo caminho da sua imagem */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -201,15 +207,14 @@ body::before {
 
 /* Efeito ao passar o mouse sobre as imagens */
 .depoimentos img:hover {
-  transform: translateY(-5px) scale(1.02); /* Leve "salto" e aumento */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Sombra mais intensa */
+  transform: translateY(-5px) scale(1.02); 
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); 
 }
 
-/* Responsividade: Ajusta o tamanho das imagens e do container em telas menores */
 @media (max-width: 768px) {
   .depoimentos {
-    padding: 30px 10px; /* Reduz o padding em telas menores */
-    gap: 15px; /* Reduz o espaço entre os elementos */
+    padding: 30px 10px; 
+    gap: 15px; 
   }
 
   .depoimentos h2 {
@@ -221,94 +226,122 @@ body::before {
   }
 
   .depoimentos img {
-    max-width: 90%; /* Permite que as imagens ocupem mais espaço em telas pequenas */
+    max-width: 90%; 
   }
 }
-
 .imc-section {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 30px;
-  opacity: 0.7;
-  background-color: #fefefe;
+  background-color: #ffffff;
+  color: #000000;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
-.imc-section h2 {
-  color: #4b3b2a;
-  margin-bottom: 20px;
+.imc-section h2,
+.imc-section h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .imc-section p,
 .imc-section ul {
-  font-size: 1.1em;
-  color: #6b4f3c;
-  line-height: 1.6;
-  text-align: left; /* Alinha o texto da descrição e lista à esquerda */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%; /* Para não ocupar 100% da largura, deixando margens */
+  margin-bottom: 20px;
 }
 
 .imc-section ul {
-  list-style: disc;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
-/* Container do formulário IMC para garantir alinhamento em coluna */
 .imc-form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Espaço entre os campos */
-  margin-top: 30px;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  gap: 12px;
 }
 
-/* Estilo para a div de resultado */
-.resultado-container {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: bold;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
   color: #333;
-  text-align: center;
-  background-color: #e9ecef;
-  border: 1px solid #dee2e6;
 }
 
-/* Estilos para as classificações de IMC (cores) */
-.abaixo-peso {
-  color: #2196f3; /* Azul */
-}
-.peso-normal {
-  color: #4caf50; /* Verde */
-}
-.sobrepeso {
-  color: #ffc107; /* Amarelo */
-}
-.obesidade-grau-1 {
-  color: #ff9800; /* Laranja */
-}
-.obesidade-grau-2 {
-  color: #ff5722; /* Laranja avermelhado */
-}
-.obesidade-grau-3 {
-  color: #f44336; /* Vermelho */
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-/* Mensagem de erro */
-.error-message {
-  color: #dc3545; /* Vermelho */
-  font-weight: normal;
+#calcular-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #f5e6dc, #d8bfa3);
+  color: #3d2c23;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
-/* Estilos para o contêiner principal da consulta online */
+
+#calcular-btn:hover {
+  background: linear-gradient(135deg, #e8d4c3, #c7a88e);
+}
+
+#validaçao {
+  color: red;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.resultado {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.resultado-abaixo-peso {
+  color: orange;
+}
+
+.resultado-peso-normal {
+  color: green;
+}
+
+.resultado-sobrepeso {
+  color: goldenrod;
+}
+
+.resultado-obesidade-1 {
+  color: darkorange;
+}
+
+.resultado-obesidade-2 {
+  color: orangered;
+}
+
+.resultado-obesidade-3 {
+  color: red;
+}
+
 .consulta-online {
   max-width: 800px; /* Largura máxima para centralizar o conteúdo */
   margin: 60px auto; /* Centraliza a div na página com margem superior e inferior */
